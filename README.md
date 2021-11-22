@@ -1,7 +1,7 @@
 # RawApp
 [![Build Status](https://travis-ci.org/ramiroencinas/rawapp.svg?branch=master)](https://travis-ci.org/ramiroencinas/rawapp)
 
-A Raku concurrent web application module
+A tiny Raku Web Application Framework module
 
 ## Features:
 
