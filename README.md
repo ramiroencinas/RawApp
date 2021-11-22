@@ -75,3 +75,6 @@ Then:
 - Run web-client in https://localhost:4433
 - Confirm SSL exception.
 - Enjoy encrypted transfers!
+
+## To do
+- Sessions support
