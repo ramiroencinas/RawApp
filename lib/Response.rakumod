@@ -84,7 +84,7 @@ sub response(:$peerip, :$buf, :$current-dir, :$default-html, :%webservices) is e
     default {
       my $filepath = "$current-dir/public/$path";
       my $type = content-type(:$filepath);
-      return response-headers(200, $type) ~ slurp "$current-dir/public/$path";
+      return response-headers(200, $type) ~ slurp $filepath;
     }
   }
 }
