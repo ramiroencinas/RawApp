@@ -19,7 +19,8 @@ sub rawapp(:$server-ip, :$server-port, :$default-html, :%webservices) is export 
       whenever $conn.Supply(:bin) -> $buf {
         my $peerip = $conn.peer-host;
         my $response = response(:$peerip, :$buf, :$current-dir, :$default-html, :%webservices);
-          whenever $conn.write: $response.encode('UTF-8') -> $res { $conn.close; } # .encode returns binary format (blob)
+          await $conn.write: $response.encode('UTF-8'); # await waits to write all the packets and .encode returns binary format (blob)
+          $conn.close;  
       }
     }
   }
